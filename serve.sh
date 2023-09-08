@@ -4,7 +4,8 @@
 osm_url="https://download.geofabrik.de/south-america/argentina-latest.osm.pbf"
 
 # Step 2: Specify the destination directory where you want to save the downloaded file
-destination_dir="~/Downloads"
+user_home_dir=~
+destination_dir="${user_home_dir}/Downloads"
 
 # Step 3: Check if the file already exists in the destination directory
 if [ -e "$destination_dir/argentina-latest.osm.pbf" ]; then
@@ -42,6 +43,7 @@ fi
 
 
 # steps 5 Install tilemaker
+sudo dpkg --configure -a
 sudo apt install tilemaker
 
 # Step 6: Check if the installation was successful
